@@ -38,5 +38,5 @@ defmodule DndCharacter do
     }
   end
 
-  defp roll(), do: 1..6 |> Enum.shuffle() |> List.first()
+  defp roll(), do: Enum.random(1..6)
 end
