@@ -8,8 +8,7 @@ defmodule PigLatin do
   def translate(phrase) do
     phrase
     |> String.split(" ")
-    |> Enum.map(&translate_single_phrase/1)
-    |> Enum.join(" ")
+    |> Enum.map_join(" ", &translate_single_phrase/1)
   end
 
   defp translate_single_phrase(phrase) do
