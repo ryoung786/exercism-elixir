@@ -19,7 +19,7 @@ defmodule SecretHandshake do
   def commands(code) do
     lst =
       [{0b01, "wink"}, {0b10, "double blink"}, {0b100, "close your eyes"}, {0b1000, "jump"}]
-      |> Enum.filter(fn {key, command} -> (key &&& code) > 0 end)
+      |> Enum.filter(fn {key, _command} -> (key &&& code) > 0 end)
       |> Enum.map(&elem(&1, 1))
 
     if (0b10000 &&& code) > 0, do: Enum.reverse(lst), else: lst
